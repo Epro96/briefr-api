@@ -10,190 +10,200 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#12151C;--surf:#1C2030;--surf2:#232840;--bdr:#2A3050;--bdr2:#1E2438;
-  --txt:#E2DAD0;--muted:#7A8099;--dim:#404860;
+  --txt:#E2DAD0;--muted:#8A9099;--dim:#505870;
   --amber:#E8A835;--amber2:rgba(232,168,53,0.12);
   --green:#4ADE80;--green2:rgba(74,222,128,0.1);
   --red:#F87171;--red2:rgba(248,113,113,0.1);
   --blue:#60A5FA;--blue2:rgba(96,165,250,0.1);
 }
-body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;min-height:100vh}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:4px}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;min-height:100vh;font-size:15px;line-height:1.6}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:4px}
 a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
 
 /* Nav */
-.nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--bdr2);height:54px;display:flex;align-items:center;padding:0 24px;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:9px}
-.logo-icon{width:28px;height:28px;background:var(--amber);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#0D0F14;font-weight:700}
-.logo-text{font-family:'Playfair Display',serif;font-size:17px;font-weight:700}
+.nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--bdr2);height:58px;display:flex;align-items:center;padding:0 24px;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{width:32px;height:32px;background:var(--amber);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;color:#0D0F14;font-weight:700}
+.logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:700}
 .nav-actions{display:flex;gap:8px}
 
 /* Buttons */
-.btn{background:var(--amber);color:#0D0F14;border:none;padding:11px 26px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:13px;border-radius:8px;cursor:pointer;transition:all .2s}
+.btn{background:var(--amber);color:#0D0F14;border:none;padding:12px 28px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;border-radius:8px;cursor:pointer;transition:all .2s}
 .btn:hover{background:#F0B840;transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,168,53,.3)}
 .btn:disabled{background:var(--bdr);color:var(--dim);transform:none;box-shadow:none;cursor:not-allowed}
-.btn-ghost{background:var(--surf2);color:var(--muted);border:1px solid var(--bdr);padding:8px 14px;font-family:'DM Sans',sans-serif;font-size:12px;border-radius:8px;cursor:pointer;transition:all .2s}
+.btn-ghost{background:var(--surf2);color:var(--muted);border:1px solid var(--bdr);padding:9px 16px;font-family:'DM Sans',sans-serif;font-size:13px;border-radius:8px;cursor:pointer;transition:all .2s}
 .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
 
 /* Layout */
-.container{max-width:900px;margin:0 auto;padding:32px 20px 80px}
+.container{max-width:920px;margin:0 auto;padding:36px 20px 100px}
 
 /* Landing */
-.landing{text-align:center;padding-top:60px}
-.lbl{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
-.landing h1{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;line-height:1.2;margin-bottom:14px}
-.landing p{font-size:13px;color:var(--muted);line-height:2;max-width:360px;margin:0 auto 32px}
-.landing .hint{font-size:11px;color:var(--dim);margin-top:10px}
-.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:48px;text-align:left;max-width:640px;margin-left:auto;margin-right:auto}
-.feature-card{background:var(--surf);border:1px solid var(--bdr2);border-radius:12px;padding:18px}
-.feature-icon{font-size:20px;margin-bottom:8px}
-.feature-title{font-size:13px;font-weight:600;margin-bottom:4px}
-.feature-desc{font-size:11px;color:var(--muted);line-height:1.6}
+.landing{text-align:center;padding-top:64px}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+.landing h1{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;line-height:1.2;margin-bottom:16px}
+.landing p{font-size:15px;color:var(--muted);line-height:2;max-width:400px;margin:0 auto 36px}
+.landing .hint{font-size:12px;color:var(--dim);margin-top:12px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:52px;text-align:left;max-width:660px;margin-left:auto;margin-right:auto}
+.feature-card{background:var(--surf);border:1px solid var(--bdr2);border-radius:12px;padding:20px}
+.feature-icon{font-size:22px;margin-bottom:10px}
+.feature-title{font-size:14px;font-weight:600;margin-bottom:6px}
+.feature-desc{font-size:12px;color:var(--muted);line-height:1.7}
 
 /* Error */
-.errbox{background:var(--red2);border:1px solid rgba(248,113,113,.3);border-radius:10px;padding:16px 18px;max-width:520px;margin:20px auto 0;text-align:left}
-.errbox .err-title{font-size:13px;font-weight:600;color:var(--red);margin-bottom:8px}
-.errbox pre{font-size:10px;background:var(--surf2);padding:10px;border-radius:6px;overflow:auto;color:var(--muted);line-height:1.5;max-height:120px;margin-bottom:12px;word-break:break-all}
+.errbox{background:var(--red2);border:1px solid rgba(248,113,113,.3);border-radius:10px;padding:18px 20px;max-width:540px;margin:24px auto 0;text-align:left}
+.errbox .err-title{font-size:14px;font-weight:600;color:var(--red);margin-bottom:8px}
+.errbox pre{font-size:11px;background:var(--surf2);padding:12px;border-radius:6px;overflow:auto;color:var(--muted);line-height:1.5;max-height:120px;margin-bottom:12px;word-break:break-all}
 
 /* Loading */
-.loading{text-align:center;padding-top:80px}
-.spinner{width:40px;height:40px;border:3px solid var(--bdr);border-top-color:var(--amber);border-radius:50%;margin:0 auto 24px;animation:spin 1s linear infinite}
+.loading{text-align:center;padding-top:90px}
+.spinner{width:44px;height:44px;border:3px solid var(--bdr);border-top-color:var(--amber);border-radius:50%;margin:0 auto 28px;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.loading h2{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:20px}
+.loading h2{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:24px}
 .loading-steps{display:inline-block;text-align:left}
-.loading-step{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:12px;color:var(--dim)}
+.loading-step{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:13px;color:var(--dim)}
 .loading-step.active{color:var(--amber)}
 .loading-step.done{color:var(--green)}
 
 /* Report Header */
-.report-header{margin-bottom:24px}
-.report-meta{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px}
-.report-title-block{flex:1;min-width:220px}
-.report-date{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
-.report-headline{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.35}
-.report-badges{display:flex;flex-direction:column;align-items:flex-end;gap:7px}
+.report-meta{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;margin-bottom:20px}
+.report-date{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+.report-headline{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;line-height:1.3}
+.report-badges{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 
 /* Badges */
-.badge{font-size:11px;font-weight:600;padding:3px 12px;border-radius:20px}
+.badge{font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px}
 .badge-green{background:var(--green2);color:var(--green);border:1px solid rgba(74,222,128,.25)}
 .badge-red{background:var(--red2);color:var(--red);border:1px solid rgba(248,113,113,.25)}
 .badge-blue{background:var(--blue2);color:var(--blue);border:1px solid rgba(96,165,250,.25)}
 .badge-amber{background:var(--amber2);color:var(--amber);border:1px solid rgba(232,168,53,.25)}
-.badge-real{font-size:9px;padding:2px 6px;border-radius:4px;font-weight:600;background:rgba(74,222,128,.12);color:var(--green);border:1px solid rgba(74,222,128,.25)}
-.badge-ai{font-size:9px;padding:2px 6px;border-radius:4px;font-weight:600;background:var(--amber2);color:var(--amber);border:1px solid rgba(232,168,53,.25)}
+.badge-real{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:600;background:rgba(74,222,128,.12);color:var(--green);border:1px solid rgba(74,222,128,.25)}
+.badge-ai{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:600;background:var(--amber2);color:var(--amber);border:1px solid rgba(232,168,53,.25)}
 
-/* Risk Level */
-.risk-banner{display:flex;align-items:center;gap:12px;padding:10px 16px;border-radius:10px;margin-bottom:20px}
+/* Risk Banner */
+.risk-banner{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:10px;margin-bottom:18px}
 .risk-on{background:var(--green2);border:1px solid rgba(74,222,128,.2)}
 .risk-neutral{background:var(--blue2);border:1px solid rgba(96,165,250,.2)}
 .risk-off{background:var(--red2);border:1px solid rgba(248,113,113,.2)}
-.risk-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.risk-dot-green{background:var(--green);box-shadow:0 0 6px var(--green)}
-.risk-dot-blue{background:var(--blue);box-shadow:0 0 6px var(--blue)}
-.risk-dot-red{background:var(--red);box-shadow:0 0 6px var(--red)}
-.risk-label{font-size:12px;font-weight:600}
-.risk-reason{font-size:11px;color:var(--muted)}
+.risk-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.risk-dot-green{background:var(--green);box-shadow:0 0 8px var(--green)}
+.risk-dot-blue{background:var(--blue);box-shadow:0 0 8px var(--blue)}
+.risk-dot-red{background:var(--red);box-shadow:0 0 8px var(--red)}
+.risk-label{font-size:14px;font-weight:600}
+.risk-reason{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* Strategy Box */
+.strategy-box{background:var(--amber2);border:1px solid rgba(232,168,53,.25);border-radius:12px;padding:20px 24px;margin-bottom:18px}
+.strategy-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+.strategy-text{font-size:18px;font-weight:600;font-family:'Playfair Display',serif;line-height:1.5}
 
 /* Section Tabs */
-.tabs{display:flex;border-bottom:1px solid var(--bdr2);margin-bottom:20px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabs{display:flex;border-bottom:1px solid var(--bdr2);margin-bottom:22px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tabs::-webkit-scrollbar{display:none}
-.tab-btn{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;padding:10px 14px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:all .2s}
+.tab-btn{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:12px 16px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:all .2s}
 .tab-btn.active{color:var(--amber);border-bottom-color:var(--amber)}
 .tab-btn:hover{color:var(--txt)}
 
 /* Cards */
 .card{background:var(--surf);border:1px solid var(--bdr2);border-radius:12px}
-.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
-.market-card{padding:14px 16px}
-.market-name{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-.market-label{font-size:11px;color:var(--muted)}
-.market-value{font-size:18px;font-weight:700;font-family:'Playfair Display',serif;margin-bottom:3px}
-.market-change{font-size:12px;font-weight:600}
+.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.market-card{padding:16px 18px}
+.market-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.market-label{font-size:12px;color:var(--muted)}
+.market-value{font-size:20px;font-weight:700;font-family:'Playfair Display',serif;margin-bottom:4px}
+.market-change{font-size:13px;font-weight:600}
 .up{color:var(--green)}.down{color:var(--red)}
 
-/* Gauge */
-.gauge-card{padding:20px 22px}
-.gauge-header{display:flex;justify-content:space-between;margin-bottom:14px}
-.gauge-label-row{display:flex;align-items:center;gap:6px;margin-bottom:5px}
-.gauge-label{font-size:12px;color:var(--muted)}
-.gauge-value{font-size:30px;font-weight:700;font-family:'Playfair Display',serif}
-.gauge-status{font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px}
-.gauge-desc{font-size:11px;color:var(--dim);margin-top:6px;max-width:130px;line-height:1.5}
-.gauge-bar{height:6px;border-radius:3px;background:linear-gradient(90deg,#4ADE80 0%,#FACC15 50%,#F87171 100%);position:relative;margin-bottom:6px}
-.gauge-dot{position:absolute;top:-3px;width:12px;height:12px;border-radius:50%;background:white;border:2.5px solid;transform:translateX(-50%);transition:left 1s ease}
-.gauge-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--dim)}
-.gauge-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+/* Section Header */
+.section-header{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
 
-/* Analysis Text */
-.analysis-box{padding:16px 18px;border-radius:10px;background:var(--surf2);border:1px solid var(--bdr2);font-size:12px;color:var(--muted);line-height:1.8;margin-top:10px}
-.analysis-label{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+/* Gauge */
+.gauge-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.gauge-card{padding:20px 22px}
+.gauge-label-row{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.gauge-label{font-size:13px;color:var(--muted)}
+.gauge-value{font-size:32px;font-weight:700;font-family:'Playfair Display',serif}
+.gauge-status-row{text-align:right}
+.gauge-status{font-size:13px;font-weight:600;padding:4px 12px;border-radius:20px}
+.gauge-desc{font-size:12px;color:var(--dim);margin-top:6px;max-width:140px;line-height:1.5}
+.gauge-bar{height:7px;border-radius:4px;background:linear-gradient(90deg,#4ADE80 0%,#FACC15 50%,#F87171 100%);position:relative;margin:14px 0 8px}
+.gauge-dot{position:absolute;top:-4px;width:14px;height:14px;border-radius:50%;background:white;border:2.5px solid;transform:translateX(-50%);transition:left 1s ease}
+.gauge-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--dim)}
+
+/* Analysis Box */
+.analysis-box{padding:18px 20px;border-radius:10px;background:var(--surf2);border:1px solid var(--bdr2);font-size:13px;color:var(--muted);line-height:1.9;margin-top:12px}
+.analysis-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
 
 /* Data Row */
-.data-row{display:flex;align-items:center;padding:10px 14px;border-bottom:1px solid var(--bdr2)}
+.data-row{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid var(--bdr2)}
 .data-row:last-child{border-bottom:none}
 .data-row:hover{background:var(--surf2)}
-.data-name{flex:2;font-size:12px;color:var(--muted)}
-.data-value{flex:1;text-align:right;font-size:14px;font-weight:600;font-family:'Playfair Display',serif}
-.data-change{flex:1;text-align:right;font-size:12px;font-weight:600}
+.data-name{flex:2;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.data-value{flex:1;text-align:right;font-size:16px;font-weight:600;font-family:'Playfair Display',serif}
+.data-change{flex:1;text-align:right;font-size:13px;font-weight:600}
 
 /* News */
-.news-item{padding:16px 18px;margin-bottom:8px;transition:background .2s;cursor:pointer;border-radius:12px}
+.news-item{padding:18px 20px;margin-bottom:10px;transition:background .2s;cursor:pointer;border-radius:12px}
 .news-item:hover{background:var(--surf2)}
-.news-meta{display:flex;justify-content:space-between;margin-bottom:8px;gap:8px;flex-wrap:wrap}
-.news-tags{display:flex;gap:5px;flex-wrap:wrap}
-.news-tag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;text-transform:uppercase}
+.news-meta{display:flex;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.news-tags{display:flex;gap:6px;flex-wrap:wrap}
+.news-tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:4px;text-transform:uppercase}
 .tag-high{background:var(--red2);color:var(--red);border:1px solid rgba(248,113,113,.25)}
 .tag-medium{background:rgba(250,204,21,.1);color:#FACC15;border:1px solid rgba(250,204,21,.25)}
 .tag-low{background:var(--surf2);color:var(--dim);border:1px solid var(--bdr)}
-.news-source{font-size:10px;color:var(--dim);white-space:nowrap}
-.news-title{font-size:14px;font-weight:500;line-height:1.5;margin-bottom:6px}
-.news-summary{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:6px}
-.news-link{font-size:11px;color:var(--amber)}
+.news-source{font-size:11px;color:var(--dim);white-space:nowrap;padding-top:2px}
+.news-title{font-size:15px;font-weight:500;line-height:1.6;margin-bottom:8px}
+.news-summary{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:8px}
+.news-link{font-size:12px;color:var(--amber)}
 
-/* Calendar / Earnings / Brokerage */
-.list-item{padding:12px 16px;border-bottom:1px solid var(--bdr2);display:flex;align-items:flex-start;gap:12px}
+/* List Items (Calendar / Earnings / Brokerage) */
+.list-item{padding:14px 18px;border-bottom:1px solid var(--bdr2);display:flex;align-items:flex-start;gap:14px}
 .list-item:last-child{border-bottom:none}
-.list-date{font-size:11px;font-weight:600;color:var(--amber);min-width:48px;flex-shrink:0;padding-top:2px}
+.list-item:hover{background:var(--surf2)}
+.list-date{font-size:12px;font-weight:600;color:var(--amber);min-width:52px;flex-shrink:0;padding-top:2px}
 .list-content{flex:1}
-.list-title{font-size:13px;font-weight:500;margin-bottom:3px}
-.list-desc{font-size:11px;color:var(--muted);line-height:1.5}
+.list-title{font-size:14px;font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.list-desc{font-size:12px;color:var(--muted);line-height:1.6}
 .imp-high{color:var(--red)}
 .imp-medium{color:#FACC15}
-.signal-beat{color:var(--green);font-weight:600}
-.signal-miss{color:var(--red);font-weight:600}
-.signal-upcoming{color:var(--amber)}
-.change-up{color:var(--green);font-weight:600}
-.change-down{color:var(--red);font-weight:600}
-.change-same{color:var(--muted)}
-
-/* Strategy Box */
-.strategy-box{background:var(--amber2);border:1px solid rgba(232,168,53,.25);border-radius:12px;padding:20px 22px;margin-bottom:10px}
-.strategy-label{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
-.strategy-text{font-size:16px;font-weight:600;font-family:'Playfair Display',serif;line-height:1.5}
+.signal-beat{color:var(--green);font-weight:600;font-size:12px}
+.signal-miss{color:var(--red);font-weight:600;font-size:12px}
+.signal-upcoming{color:var(--amber);font-size:12px}
+.change-up{color:var(--green);font-weight:700;font-size:13px}
+.change-down{color:var(--red);font-weight:700;font-size:13px}
+.change-same{color:var(--muted);font-size:13px}
+.country-badge{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:600}
+.country-us{background:rgba(96,165,250,.1);color:var(--blue);border:1px solid rgba(96,165,250,.25)}
+.country-kr{background:rgba(74,222,128,.1);color:var(--green);border:1px solid rgba(74,222,128,.25)}
+.country-eu{background:rgba(232,168,53,.1);color:var(--amber);border:1px solid rgba(232,168,53,.25)}
 
 /* Insight */
-.insight-point{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
-.insight-num{width:24px;height:24px;border-radius:50%;background:var(--amber2);border:1px solid rgba(232,168,53,.25);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--amber);flex-shrink:0}
-.insight-text{font-size:13px;line-height:1.7;padding-top:2px}
-.risk-box{background:var(--red2);border:1px solid rgba(248,113,113,.2);border-radius:12px;padding:16px 20px;display:flex;gap:12px;margin-bottom:10px}
-.tomorrow-box{background:var(--amber2);border:1px solid rgba(232,168,53,.2);border-radius:12px;padding:14px 18px;display:flex;gap:10px;align-items:center;margin-bottom:10px}
-.disclaimer{padding:10px 14px;background:var(--surf2);border-radius:8px;font-size:10px;color:var(--dim);line-height:1.6}
+.insight-point{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
+.insight-num{width:28px;height:28px;border-radius:50%;background:var(--amber2);border:1px solid rgba(232,168,53,.25);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--amber);flex-shrink:0;margin-top:1px}
+.insight-text{font-size:14px;line-height:1.8;padding-top:3px}
+.risk-box{background:var(--red2);border:1px solid rgba(248,113,113,.2);border-radius:12px;padding:18px 22px;display:flex;gap:14px;margin-bottom:12px}
+.risk-box-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.risk-box-label{font-size:10px;font-weight:600;color:var(--red);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.risk-box-text{font-size:14px;line-height:1.7}
+.tomorrow-box{background:var(--amber2);border:1px solid rgba(232,168,53,.2);border-radius:12px;padding:16px 20px;display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+.tomorrow-icon{font-size:18px;flex-shrink:0;margin-top:2px}
+.tomorrow-label{font-size:10px;color:var(--amber);font-weight:600;letter-spacing:.08em;margin-bottom:5px}
+.tomorrow-text{font-size:14px;line-height:1.7}
+.disclaimer{padding:12px 16px;background:var(--surf2);border-radius:8px;font-size:11px;color:var(--dim);line-height:1.7;margin-top:4px}
 
 /* Toast */
-.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:var(--surf);border:1px solid var(--amber);color:var(--amber);padding:10px 22px;border-radius:8px;font-size:13px;font-weight:500;z-index:999;display:none}
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:var(--surf);border:1px solid var(--amber);color:var(--amber);padding:12px 24px;border-radius:8px;font-size:13px;font-weight:500;z-index:999;display:none}
 
-/* Section divider */
-.section-header{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
-
-/* Animations */
+/* Fade */
 .fade-in{animation:fadeIn .4s ease}@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
 /* Responsive */
-@media(max-width:600px){
+@media(max-width:640px){
   .market-grid{grid-template-columns:repeat(2,1fr)}
   .gauge-grid{grid-template-columns:1fr}
   .feature-grid{grid-template-columns:1fr}
-  .report-headline{font-size:20px}
-  .landing h1{font-size:28px}
+  .report-headline{font-size:24px}
+  .landing h1{font-size:32px}
+  .strategy-text{font-size:16px}
 }
 </style>
 </head>
@@ -216,17 +226,17 @@ a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
     <div class="lbl">데일리 투자 브리핑</div>
     <h1>오늘 시장,<br><span style="color:var(--amber)">한눈에</span> 파악하세요</h1>
     <p>KOSPI·NASDAQ·채권·환율·원자재·암호화폐를<br>실시간 수집하고 AI가 분석·요약합니다</p>
-    <button class="btn" onclick="generate()" style="padding:14px 36px;font-size:15px">오늘 리포트 생성하기</button>
-    <div class="hint">실시간 API + Claude AI 분석 · 약 20~40초</div>
+    <button class="btn" onclick="generate()" style="padding:15px 40px;font-size:16px">오늘 리포트 생성하기</button>
+    <div class="hint">실시간 API + Claude AI 분석 · 약 30~50초</div>
 
     <div id="errorBox" class="errbox" style="display:none">
       <div class="err-title" id="errTitle">⚠ 오류</div>
-      <pre id="errDetail"></pre>
-      <button class="btn" onclick="generate()" style="padding:8px 18px;font-size:12px">다시 시도</button>
+      <pre id="errDetail" style="display:none"></pre>
+      <button class="btn" onclick="generate()" style="padding:10px 20px;font-size:13px">다시 시도</button>
     </div>
 
     <div class="feature-grid">
-      <div class="feature-card"><div class="feature-icon">📈</div><div class="feature-title">12개 섹션</div><div class="feature-desc">주식·채권·환율·원자재·코인·뉴스·증권사 리포트까지</div></div>
+      <div class="feature-card"><div class="feature-icon">📈</div><div class="feature-title">11개 섹션</div><div class="feature-desc">주식·채권·환율·원자재·코인·뉴스·증권사 리포트까지</div></div>
       <div class="feature-card"><div class="feature-icon">🧭</div><div class="feature-title">리스크 레벨</div><div class="feature-desc">리스크 온/오프 판단 + VIX·공포탐욕 게이지</div></div>
       <div class="feature-card"><div class="feature-icon">🎯</div><div class="feature-title">오늘의 전략</div><div class="feature-desc">AI가 시장 상황에 맞는 투자 전략 한 줄 제시</div></div>
     </div>
@@ -237,31 +247,28 @@ a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
     <div class="spinner"></div>
     <h2>리포트 생성 중</h2>
     <div class="loading-steps">
-      <div class="loading-step active" id="step0">○ 주식·채권·환율·원자재 지수 수집 중</div>
+      <div class="loading-step active" id="step0">○ 주식·채권·환율·원자재 수집 중</div>
       <div class="loading-step" id="step1">· 암호화폐·공포탐욕·펀딩비 수집 중</div>
-      <div class="loading-step" id="step2">· 국내·해외 뉴스 RSS 수집 중</div>
-      <div class="loading-step" id="step3">· Claude AI 분석 및 리포트 작성 중</div>
+      <div class="loading-step" id="step2">· 국내·해외 뉴스 수집 중</div>
+      <div class="loading-step" id="step3">· Claude AI 시장 분석 중</div>
+      <div class="loading-step" id="step4">· Claude AI 뉴스 요약 중</div>
     </div>
   </div>
 
   <!-- Report -->
   <div id="reportView" style="display:none">
-    <!-- Header -->
-    <div class="report-header fade-in">
-      <div class="report-meta">
-        <div class="report-title-block">
-          <div class="report-date" id="reportDate"></div>
-          <div class="report-headline" id="reportHeadline"></div>
-        </div>
-        <div class="report-badges">
-          <span id="sentimentBadge" class="badge"></span>
-          <div style="font-size:11px;color:var(--dim);max-width:170px;text-align:right;line-height:1.5" id="sentimentReason"></div>
-        </div>
+    <div class="report-meta fade-in">
+      <div style="flex:1;min-width:220px">
+        <div class="report-date" id="reportDate"></div>
+        <div class="report-headline" id="reportHeadline"></div>
+      </div>
+      <div class="report-badges">
+        <span id="sentimentBadge" class="badge"></span>
+        <div style="font-size:12px;color:var(--dim);max-width:200px;text-align:right;line-height:1.6" id="sentimentReason"></div>
       </div>
     </div>
 
-    <!-- Risk Banner -->
-    <div id="riskBanner" class="risk-banner risk-neutral" style="margin-bottom:16px">
+    <div id="riskBanner" class="risk-banner risk-neutral">
       <div id="riskDot" class="risk-dot risk-dot-blue"></div>
       <div>
         <div id="riskLabel" class="risk-label"></div>
@@ -269,16 +276,12 @@ a{color:var(--amber);text-decoration:none}a:hover{text-decoration:underline}
       </div>
     </div>
 
-    <!-- Strategy -->
     <div class="strategy-box">
       <div class="strategy-label">오늘의 전략</div>
       <div class="strategy-text" id="strategyText"></div>
     </div>
 
-    <!-- Tabs -->
     <div class="tabs" id="tabBar"></div>
-
-    <!-- Tab Content -->
     <div id="tabContent" class="fade-in"></div>
   </div>
 </div>
@@ -291,17 +294,17 @@ let activeTab = 0;
 let loading = false;
 
 const TABS = [
-  { id: 'summary',   label: '📊 요약' },
-  { id: 'stocks',    label: '📈 주식' },
-  { id: 'crypto',    label: '🪙 코인' },
-  { id: 'bonds',     label: '🏦 채권·금리' },
-  { id: 'fx',        label: '💱 환율·원자재' },
-  { id: 'volatility',label: '📉 변동성' },
-  { id: 'calendar',  label: '📅 경제지표' },
-  { id: 'earnings',  label: '🏢 기업실적' },
-  { id: 'brokerage', label: '📑 증권사' },
-  { id: 'news',      label: '📰 뉴스' },
-  { id: 'insight',   label: '💡 인사이트' },
+  {id:'summary',    label:'📊 요약'},
+  {id:'stocks',     label:'📈 주식'},
+  {id:'crypto',     label:'🪙 코인'},
+  {id:'bonds',      label:'🏦 채권·금리'},
+  {id:'fx',         label:'💱 환율·원자재'},
+  {id:'volatility', label:'📉 변동성'},
+  {id:'calendar',   label:'📅 경제지표'},
+  {id:'earnings',   label:'🏢 기업실적'},
+  {id:'brokerage',  label:'📑 증권사'},
+  {id:'news',       label:'📰 뉴스'},
+  {id:'insight',    label:'💡 인사이트'},
 ];
 
 async function generate() {
@@ -313,42 +316,38 @@ async function generate() {
   document.getElementById('errorBox').style.display = 'none';
   document.getElementById('loadingView').style.display = 'block';
 
-  // Animate loading steps
-  const stepInterval = setInterval(() => {
-    const steps = ['step0','step1','step2','step3'];
-    const current = steps.find(s => document.getElementById(s).classList.contains('active'));
-    if (current) {
-      document.getElementById(current).className = 'loading-step done';
-      document.getElementById(current).textContent = '✓ ' + document.getElementById(current).textContent.slice(2);
-      const idx = steps.indexOf(current);
-      if (idx < steps.length - 1) {
-        const next = document.getElementById(steps[idx + 1]);
-        next.className = 'loading-step active';
-        next.textContent = '○ ' + next.textContent.slice(2);
+  const steps = ['step0','step1','step2','step3','step4'];
+  let si = 0;
+  const stepTimer = setInterval(() => {
+    if (si < steps.length) {
+      if (si > 0) {
+        const prev = document.getElementById(steps[si-1]);
+        prev.className = 'loading-step done';
+        prev.textContent = '✓ ' + prev.textContent.slice(2);
       }
+      const cur = document.getElementById(steps[si]);
+      cur.className = 'loading-step active';
+      cur.textContent = '○ ' + cur.textContent.slice(2);
+      si++;
     }
-  }, 7000);
+  }, 8000);
 
   try {
-    const res = await fetch('/api/report', { signal: AbortSignal.timeout(55000) });
+    const res = await fetch('/api/report', { signal: AbortSignal.timeout(60000) });
+    clearInterval(stepTimer);
     const data = await res.json();
-    clearInterval(stepInterval);
-
     if (!res.ok || data.error) throw new Error(data.error || `서버 오류 (${res.status})`);
     if (!data.headline) throw new Error('리포트 데이터가 올바르지 않습니다');
-
     reportData = data;
     document.getElementById('shareBtn').style.display = 'block';
     showReport(data);
-  } catch (e) {
-    clearInterval(stepInterval);
+  } catch(e) {
+    clearInterval(stepTimer);
     document.getElementById('loadingView').style.display = 'none';
     document.getElementById('landing').style.display = 'block';
     document.getElementById('errorBox').style.display = 'block';
     document.getElementById('errTitle').textContent = '⚠ ' + (e.message || '오류 발생');
-    document.getElementById('errDetail').textContent = e.stack?.slice(0,200) || '';
   }
-
   loading = false;
   document.getElementById('generateBtn').disabled = false;
 }
@@ -360,17 +359,13 @@ function showReport(d) {
   document.getElementById('reportHeadline').textContent = d.headline || '';
   document.getElementById('sentimentReason').textContent = d.sentimentReason || '';
 
-  // Sentiment badge
   const sb = document.getElementById('sentimentBadge');
-  const smap = { 강세: 'badge-green', 약세: 'badge-red', 중립: 'badge-blue', 주의: 'badge-amber' };
+  const smap = {강세:'badge-green',약세:'badge-red',중립:'badge-blue',주의:'badge-amber'};
   sb.className = 'badge ' + (smap[d.sentiment] || 'badge-blue');
   sb.textContent = d.sentiment || '중립';
 
-  // Risk banner
   const rb = document.getElementById('riskBanner');
   const rd = document.getElementById('riskDot');
-  const rl = document.getElementById('riskLabel');
-  const rr = document.getElementById('riskReason');
   if (d.riskLevel === '리스크 온') {
     rb.className = 'risk-banner risk-on'; rd.className = 'risk-dot risk-dot-green';
   } else if (d.riskLevel === '리스크 오프') {
@@ -378,344 +373,351 @@ function showReport(d) {
   } else {
     rb.className = 'risk-banner risk-neutral'; rd.className = 'risk-dot risk-dot-blue';
   }
-  rl.textContent = d.riskLevel || '';
-  rr.textContent = d.riskReason || '';
-
+  document.getElementById('riskLabel').textContent = d.riskLevel || '';
+  document.getElementById('riskReason').textContent = d.riskReason || '';
   document.getElementById('strategyText').textContent = d.strategy || '';
 
-  // Build tabs
   const tabBar = document.getElementById('tabBar');
-  tabBar.innerHTML = TABS.map((t, i) =>
-    `<button class="tab-btn${i === 0 ? ' active' : ''}" onclick="switchTab(${i})">${t.label}</button>`
-  ).join('') +
-  `<button class="btn-ghost" onclick="generate()" style="margin-left:auto;align-self:center;margin-bottom:4px;font-size:11px;padding:5px 12px">새로고침</button>`;
+  tabBar.innerHTML = TABS.map((t,i) =>
+    `<button class="tab-btn${i===0?' active':''}" onclick="switchTab(${i})">${t.label}</button>`
+  ).join('') + `<button class="btn-ghost" onclick="generate()" style="margin-left:auto;align-self:center;margin-bottom:4px;font-size:12px;padding:6px 14px">새로고침</button>`;
 
   switchTab(0);
 }
 
 function switchTab(idx) {
   activeTab = idx;
-  const buttons = document.querySelectorAll('.tab-btn');
-  buttons.forEach((b, i) => b.classList.toggle('active', i === idx));
-
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
   const content = document.getElementById('tabContent');
   content.className = 'fade-in';
   content.innerHTML = renderTab(TABS[idx].id, reportData);
 }
 
 function val(d) {
-  if (!d) return { v: 'N/A', c: 'N/A', upClass: '', badge: '<span class="badge-ai">데이터없음</span>' };
-  return {
-    v: d.value || 'N/A',
-    c: d.change || 'N/A',
-    upClass: d.up ? 'up' : 'down',
-    badge: d.isReal ? '<span class="badge-real">실시간</span>' : '<span class="badge-ai">AI</span>',
-    arr: d.up ? '▲' : '▼',
-  };
+  if (!d) return {v:'N/A',c:'N/A',upClass:'',badge:'<span class="badge-ai">없음</span>',arr:''};
+  return {v:d.value||'N/A',c:d.change||'N/A',upClass:d.up?'up':'down',badge:d.isReal?'<span class="badge-real">실시간</span>':'<span class="badge-ai">AI</span>',arr:d.up?'▲':'▼'};
 }
 
 function marketCard(label, d) {
   const x = val(d);
-  return `
-    <div class="card market-card">
-      <div class="market-name"><span class="market-label">${label}</span>${x.badge}</div>
-      <div class="market-value">${x.v}</div>
-      <div class="market-change ${x.upClass}">${x.arr || ''} ${x.c}</div>
-    </div>`;
+  return `<div class="card market-card">
+    <div class="market-label-row"><span class="market-label">${label}</span>${x.badge}</div>
+    <div class="market-value">${x.v}</div>
+    <div class="market-change ${x.upClass}">${x.arr} ${x.c}</div>
+  </div>`;
 }
 
 function dataRow(label, d, unit) {
   const x = val(d);
-  return `
-    <div class="data-row">
-      <span class="data-name">${label} ${x.badge}</span>
-      <span class="data-value">${x.v}${unit || ''}</span>
-      <span class="data-change ${x.upClass}">${x.arr || ''} ${x.c}</span>
-    </div>`;
+  return `<div class="data-row">
+    <span class="data-name">${label} ${x.badge}</span>
+    <span class="data-value">${x.v}${unit||''}</span>
+    <span class="data-change ${x.upClass}">${x.arr} ${x.c}</span>
+  </div>`;
 }
 
-function gaugeHtml(label, value, max, desc, isReal, color) {
-  const pct = Math.min(Math.max((value / max) * 100, 0), 100);
-  return `
-    <div class="card gauge-card">
-      <div class="gauge-header">
-        <div>
-          <div class="gauge-label-row">
-            <span class="gauge-label">${label}</span>
-            ${isReal ? '<span class="badge-real">실시간</span>' : '<span class="badge-ai">AI추정</span>'}
-          </div>
-          <div class="gauge-value" style="color:${color}">${value}</div>
+function gaugeHtml(label, value, max, statusLabel, isReal, color) {
+  const pct = Math.min(Math.max((value/max)*100,0),100);
+  return `<div class="card gauge-card">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <div>
+        <div class="gauge-label-row">
+          <span class="gauge-label">${label}</span>
+          ${isReal?'<span class="badge-real">실시간</span>':'<span class="badge-ai">AI추정</span>'}
         </div>
-        <div style="text-align:right">
-          <div class="gauge-desc">${desc}</div>
-        </div>
+        <div class="gauge-value" style="color:${color}">${value}</div>
       </div>
-      <div class="gauge-bar">
-        <div class="gauge-dot" style="left:${pct}%;border-color:${color};box-shadow:0 0 8px ${color}70"></div>
+      <div class="gauge-status-row">
+        <div class="gauge-status" style="color:${color};background:${color}18;border:1px solid ${color}30">${statusLabel}</div>
       </div>
-      <div class="gauge-labels"><span>낮음</span><span>보통</span><span>높음</span></div>
-    </div>`;
+    </div>
+    <div class="gauge-bar">
+      <div class="gauge-dot" style="left:${pct}%;border-color:${color};box-shadow:0 0 8px ${color}70"></div>
+    </div>
+    <div class="gauge-labels"><span>낮음</span><span>보통</span><span>높음</span></div>
+  </div>`;
 }
 
-function vixColor(v) { return v < 15 ? 'var(--green)' : v < 25 ? '#FACC15' : 'var(--red)'; }
-function fgColor(v)  { return v < 25 ? 'var(--red)' : v < 45 ? '#FB923C' : v < 55 ? '#FACC15' : v < 75 ? '#A3E635' : 'var(--green)'; }
-function fgLabel(v)  { return v < 25 ? '극도공포' : v < 45 ? '공포' : v < 55 ? '중립' : v < 75 ? '탐욕' : '극도탐욕'; }
-function vixLabel(v) { return v < 15 ? '안정' : v < 25 ? '경계' : '위험'; }
+function vixColor(v){return v<15?'var(--green)':v<25?'#FACC15':'var(--red)'}
+function vixLabel(v){return v<15?'안정':v<25?'경계':'위험'}
+function fgColor(v){return v<25?'var(--red)':v<45?'#FB923C':v<55?'#FACC15':v<75?'#A3E635':'var(--green)'}
+function fgLabel(v){return v<25?'극도공포':v<45?'공포':v<55?'중립':v<75?'탐욕':'극도탐욕'}
+
+function countryBadge(c) {
+  if (!c) return '';
+  const map = {US:'country-us',KR:'country-kr',EU:'country-eu'};
+  return `<span class="country-badge ${map[c]||'country-us'}">${c}</span>`;
+}
 
 function renderTab(id, d) {
   if (!d) return '';
-
   switch(id) {
+
     case 'summary': return `
       <div class="section-header">시장 지수 한눈에</div>
       <div class="market-grid">
-        ${marketCard('KOSPI', d.stocks?.KOSPI)}
-        ${marketCard('KOSDAQ', d.stocks?.KOSDAQ)}
-        ${marketCard('S&P 500', d.stocks?.SP500)}
-        ${marketCard('NASDAQ', d.stocks?.NASDAQ)}
-        ${marketCard('BTC/USD', d.crypto?.BTC)}
-        ${marketCard('USD/KRW', d.fx?.USDKRW)}
+        ${marketCard('KOSPI',d.stocks?.KOSPI)}
+        ${marketCard('KOSDAQ',d.stocks?.KOSDAQ)}
+        ${marketCard('S&P 500',d.stocks?.SP500)}
+        ${marketCard('NASDAQ',d.stocks?.NASDAQ)}
+        ${marketCard('BTC/USD',d.crypto?.list?.[0])}
+        ${marketCard('USD/KRW',d.fx?.USDKRW)}
       </div>
       <div class="gauge-grid">
-        ${d.volatility?.VIX ? gaugeHtml('VIX 공포지수', d.volatility.VIX.raw, 50, vixLabel(d.volatility.VIX.raw), d.volatility.VIX.isReal, vixColor(d.volatility.VIX.raw)) : ''}
-        ${d.crypto?.fearGreed ? gaugeHtml('공포&탐욕 지수', d.crypto.fearGreed.value, 100, fgLabel(d.crypto.fearGreed.value), d.crypto.fearGreed.isReal, fgColor(d.crypto.fearGreed.value)) : ''}
+        ${d.volatility?.VIX?gaugeHtml('VIX 공포지수',d.volatility.VIX.raw,50,vixLabel(d.volatility.VIX.raw),d.volatility.VIX.isReal,vixColor(d.volatility.VIX.raw)):''}
+        ${d.crypto?.fearGreed?gaugeHtml('공포&탐욕 지수',d.crypto.fearGreed.value,100,fgLabel(d.crypto.fearGreed.value),d.crypto.fearGreed.isReal,fgColor(d.crypto.fearGreed.value)):''}
       </div>
       <div class="analysis-box">
-        <div class="analysis-label">오늘 시장 분석</div>
-        ${d.insights?.keyPoints?.map(p => `<div style="margin-bottom:4px">• ${p}</div>`).join('') || ''}
+        <div class="analysis-label">오늘 시장 핵심 포인트</div>
+        ${(d.insights?.keyPoints||[]).map(p=>`<div style="margin-bottom:6px">• ${p}</div>`).join('')}
       </div>`;
 
     case 'stocks': return `
       <div class="section-header">국내 · 미국 · 아시아</div>
       <div class="market-grid">
-        ${marketCard('KOSPI', d.stocks?.KOSPI)}
-        ${marketCard('KOSDAQ', d.stocks?.KOSDAQ)}
-        ${marketCard('S&P 500', d.stocks?.SP500)}
-        ${marketCard('NASDAQ', d.stocks?.NASDAQ)}
-        ${marketCard('닛케이', d.stocks?.NIKKEI)}
-        ${marketCard('상하이', d.stocks?.SHANGHAI)}
+        ${marketCard('KOSPI',d.stocks?.KOSPI)}
+        ${marketCard('KOSDAQ',d.stocks?.KOSDAQ)}
+        ${marketCard('S&P 500',d.stocks?.SP500)}
+        ${marketCard('NASDAQ',d.stocks?.NASDAQ)}
+        ${marketCard('닛케이',d.stocks?.NIKKEI)}
+        ${marketCard('상하이',d.stocks?.SHANGHAI)}
+        ${d.stocks?.HANGSENG?marketCard('항셍',d.stocks.HANGSENG):''}
       </div>
       <div class="analysis-box">
         <div class="analysis-label">섹터 동향 분석</div>
-        ${d.stocks?.analysis || 'AI 분석 없음'}
+        ${d.stocks?.analysis||'AI 분석 없음'}
       </div>`;
 
-    case 'crypto': return `
-      <div class="section-header">암호화폐 시장</div>
-      <div class="market-grid">
-        ${marketCard('Bitcoin', d.crypto?.BTC)}
-        ${marketCard('Ethereum', d.crypto?.ETH)}
-        ${marketCard('Solana', d.crypto?.SOL)}
-      </div>
-      <div class="card" style="margin-bottom:10px">
-        <div class="data-row">
-          <span class="data-name">BTC 펀딩비 <span class="badge-real" style="${d.crypto?.fundingRate?.isReal ? '' : 'display:none'}">실시간</span></span>
-          <span class="data-value" style="color:${d.crypto?.fundingRate?.raw > 0 ? 'var(--green)' : d.crypto?.fundingRate?.raw < 0 ? 'var(--red)' : 'var(--muted)'}">
-            ${d.crypto?.fundingRate?.value || 'N/A'}
-          </span>
-          <span class="data-change" style="color:var(--muted)">
-            ${d.crypto?.fundingRate?.raw > 0.05 ? '과열(롱)' : d.crypto?.fundingRate?.raw < -0.05 ? '과열(숏)' : '중립'}
-          </span>
+    case 'crypto': {
+      const cryptoList = d.crypto?.list||[];
+      return `
+        <div class="section-header">암호화폐 시장 (시총 상위 10)</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px">
+          ${cryptoList.slice(0,6).map(c=>`
+            <div class="card market-card">
+              <div class="market-label-row"><span class="market-label">${c.symbol}</span><span class="badge-real">실시간</span></div>
+              <div class="market-value">${c.value}</div>
+              <div class="market-change ${c.up?'up':'down'}">${c.up?'▲':'▼'} ${c.change}</div>
+            </div>`).join('')}
         </div>
-        <div class="data-row">
-          <span class="data-name">공포&탐욕 지수 ${d.crypto?.fearGreed?.isReal ? '<span class="badge-real">실시간</span>' : ''}</span>
-          <span class="data-value" style="color:${d.crypto?.fearGreed ? fgColor(d.crypto.fearGreed.value) : 'var(--muted)'}">
-            ${d.crypto?.fearGreed?.value || 'N/A'}점
-          </span>
-          <span class="data-change" style="color:${d.crypto?.fearGreed ? fgColor(d.crypto.fearGreed.value) : 'var(--muted)'}">
-            ${d.crypto?.fearGreed ? fgLabel(d.crypto.fearGreed.value) : ''}
-          </span>
+        <div class="card" style="margin-bottom:12px">
+          ${cryptoList.slice(6).map(c=>`
+            <div class="data-row">
+              <span class="data-name">${c.name} (${c.symbol}) <span class="badge-real">실시간</span></span>
+              <span class="data-value">${c.value}</span>
+              <span class="data-change ${c.up?'up':'down'}">${c.up?'▲':'▼'} ${c.change}</span>
+            </div>`).join('')}
+          ${d.crypto?.fundingRate?`
+            <div class="data-row">
+              <span class="data-name">BTC 펀딩비 <span class="badge-real">실시간</span></span>
+              <span class="data-value" style="color:${d.crypto.fundingRate.raw>0?'var(--green)':d.crypto.fundingRate.raw<0?'var(--red)':'var(--muted)'}">${d.crypto.fundingRate.value}</span>
+              <span class="data-change" style="color:var(--muted)">${d.crypto.fundingRate.raw>0.05?'과열(롱)':d.crypto.fundingRate.raw<-0.05?'과열(숏)':'중립'}</span>
+            </div>`:''}
+          ${d.crypto?.fearGreed?`
+            <div class="data-row">
+              <span class="data-name">공포&탐욕 지수 <span class="badge-real">실시간</span></span>
+              <span class="data-value" style="color:${fgColor(d.crypto.fearGreed.value)}">${d.crypto.fearGreed.value}점</span>
+              <span class="data-change" style="color:${fgColor(d.crypto.fearGreed.value)}">${fgLabel(d.crypto.fearGreed.value)}</span>
+            </div>`:''}
         </div>
-      </div>
-      <div class="gauge-grid">
-        ${d.crypto?.fearGreed ? gaugeHtml('공포&탐욕 지수', d.crypto.fearGreed.value, 100, fgLabel(d.crypto.fearGreed.value), d.crypto.fearGreed.isReal, fgColor(d.crypto.fearGreed.value)) : ''}
-      </div>
-      <div class="analysis-box">
-        <div class="analysis-label">크립토 시장 분석</div>
-        ${d.crypto?.analysis || 'AI 분석 없음'}
-      </div>`;
+        <div class="gauge-grid">
+          ${d.crypto?.fearGreed?gaugeHtml('공포&탐욕 지수 (CNN)',d.crypto.fearGreed.value,100,fgLabel(d.crypto.fearGreed.value),d.crypto.fearGreed.isReal,fgColor(d.crypto.fearGreed.value)):''}
+        </div>
+        <div class="analysis-box">
+          <div class="analysis-label">크립토 시장 분석</div>
+          ${d.crypto?.analysis||'AI 분석 없음'}
+        </div>`;
+    }
 
     case 'bonds': return `
       <div class="section-header">채권 · 금리</div>
-      <div class="card" style="margin-bottom:10px">
-        ${dataRow('미국 10년물 국채', d.bonds?.US10Y, '%')}
-        ${dataRow('미국 2년물 국채', d.bonds?.US2Y, '%')}
-        ${d.bonds?.spread ? `
-        <div class="data-row">
-          <span class="data-name">장단기 금리차 (10Y-2Y)</span>
-          <span class="data-value" style="color:${d.bonds.spread.up ? 'var(--green)' : 'var(--red)'}">
-            ${d.bonds.spread.value}
-          </span>
-          <span class="data-change" style="color:${d.bonds.spread.up ? 'var(--green)' : 'var(--red)'}">
-            ${d.bonds.spread.signal}
-          </span>
-        </div>` : ''}
+      <div class="card" style="margin-bottom:12px">
+        ${dataRow('미국 10년물 국채',d.bonds?.US10Y,'%')}
+        ${dataRow('미국 2년물 국채',d.bonds?.US2Y,'%')}
+        ${dataRow('미국 30년물 국채',d.bonds?.US30Y,'%')}
+        ${d.bonds?.spread?`
+          <div class="data-row">
+            <span class="data-name">장단기 금리차 (10Y-2Y) <span class="badge-real">실시간</span></span>
+            <span class="data-value" style="color:${d.bonds.spread.up?'var(--green)':'var(--red)'}">${d.bonds.spread.value}</span>
+            <span class="data-change" style="color:${d.bonds.spread.up?'var(--green)':'var(--red)'}">${d.bonds.spread.signal}</span>
+          </div>`:''}
       </div>
       <div class="analysis-box">
         <div class="analysis-label">채권·금리 분석</div>
-        ${d.bonds?.analysis || 'AI 분석 없음'}
+        ${d.bonds?.analysis||'AI 분석 없음'}
       </div>
-      <div style="padding:12px 14px;background:var(--surf2);border-radius:8px;font-size:11px;color:var(--dim);line-height:1.7;margin-top:8px">
-        💡 장단기 금리 역전(음수)은 역사적으로 경기침체 선행지표로 활용됩니다.
+      <div style="padding:12px 16px;background:var(--surf2);border-radius:8px;font-size:12px;color:var(--dim);line-height:1.7;margin-top:10px">
+        💡 장단기 금리 역전(음수)은 역사적으로 경기침체 선행지표입니다.
       </div>`;
 
     case 'fx': return `
-      <div class="section-header">환율 · 원자재</div>
-      <div class="card" style="margin-bottom:10px">
-        <div class="section-header" style="padding:12px 14px 4px;margin:0">환율</div>
-        ${dataRow('달러/원 (USD/KRW)', d.fx?.USDKRW, '')}
-        ${dataRow('달러/엔 (USD/JPY)', d.fx?.USDJPY, '')}
-        ${dataRow('유로/달러 (EUR/USD)', d.fx?.EURUSD, '')}
-        ${dataRow('달러 인덱스 (DXY)', d.fx?.DXY, '')}
+      <div class="section-header">환율</div>
+      <div class="card" style="margin-bottom:12px">
+        ${dataRow('달러/원 (USD/KRW)',d.fx?.USDKRW,'')}
+        ${dataRow('달러/엔 (USD/JPY)',d.fx?.USDJPY,'')}
+        ${dataRow('유로/달러 (EUR/USD)',d.fx?.EURUSD,'')}
+        ${dataRow('달러/위안 (USD/CNY)',d.fx?.USDCNY,'')}
+        ${dataRow('달러 인덱스 (DXY)',d.fx?.DXY,'')}
       </div>
-      <div class="card" style="margin-bottom:10px">
-        <div class="section-header" style="padding:12px 14px 4px;margin:0">원자재</div>
-        ${dataRow('금 (Gold)', d.fx?.GOLD, '')}
-        ${dataRow('유가 WTI', d.fx?.OIL, '')}
-        ${dataRow('구리 (Copper)', d.fx?.COPPER, '')}
+      <div class="section-header">원자재</div>
+      <div class="card" style="margin-bottom:12px">
+        ${dataRow('금 (Gold)',d.fx?.GOLD,'')}
+        ${dataRow('WTI 원유',d.fx?.OIL,'')}
+        ${dataRow('브렌트 원유',d.fx?.BRENT,'')}
+        ${dataRow('구리 (Copper)',d.fx?.COPPER,'')}
+        ${dataRow('은 (Silver)',d.fx?.SILVER,'')}
+        ${dataRow('천연가스',d.fx?.NATGAS,'')}
       </div>
       <div class="analysis-box">
         <div class="analysis-label">환율·원자재 분석</div>
-        ${d.fx?.analysis || 'AI 분석 없음'}
+        ${d.fx?.analysis||'AI 분석 없음'}
       </div>`;
 
     case 'volatility': return `
       <div class="section-header">변동성 · 리스크 지표</div>
       <div class="gauge-grid">
-        ${d.volatility?.VIX ? gaugeHtml('VIX — 변동성 지수 (CBOE)', d.volatility.VIX.raw, 50, vixLabel(d.volatility.VIX.raw), d.volatility.VIX.isReal, vixColor(d.volatility.VIX.raw)) : ''}
-        ${d.crypto?.fearGreed ? gaugeHtml('공포&탐욕 지수 (CNN)', d.crypto.fearGreed.value, 100, fgLabel(d.crypto.fearGreed.value), d.crypto.fearGreed.isReal, fgColor(d.crypto.fearGreed.value)) : ''}
+        ${d.volatility?.VIX?gaugeHtml('VIX — 변동성 지수 (CBOE)',d.volatility.VIX.raw,50,vixLabel(d.volatility.VIX.raw),d.volatility.VIX.isReal,vixColor(d.volatility.VIX.raw)):''}
+        ${d.crypto?.fearGreed?gaugeHtml('공포&탐욕 지수 (CNN)',d.crypto.fearGreed.value,100,fgLabel(d.crypto.fearGreed.value),d.crypto.fearGreed.isReal,fgColor(d.crypto.fearGreed.value)):''}
       </div>
-      ${d.volatility?.MOVE ? `<div class="card" style="margin-bottom:10px">${dataRow('MOVE 지수 (채권 변동성)', d.volatility.MOVE, '')}</div>` : ''}
+      ${d.volatility?.MOVE?`<div class="card" style="margin-bottom:12px">${dataRow('MOVE 지수 (채권 변동성)',d.volatility.MOVE,'')}</div>`:''}
       <div class="analysis-box">
         <div class="analysis-label">변동성 종합 분석</div>
-        ${d.volatility?.analysis || 'AI 분석 없음'}
+        ${d.volatility?.analysis||'AI 분석 없음'}
       </div>
-      <div class="card" style="margin-top:10px">
-        <div style="padding:14px 16px">
-          <div class="section-header" style="margin-bottom:10px">해석 가이드</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-            ${[['VIX < 15','안정. 낙관론 우세.','var(--green)'],['VIX 15–25','일반적 변동성.','#FACC15'],['VIX > 25','공포 확산. 리스크 경계.','var(--red)'],['공포탐욕 < 30','역발상 매수 구간.','var(--blue)']].map(([t,d,c])=>`
-            <div style="padding:10px 12px;background:var(--surf2);border-radius:8px">
-              <div style="font-size:12px;font-weight:600;color:${c};margin-bottom:3px">${t}</div>
-              <div style="font-size:11px;color:var(--muted)">${d}</div>
+      <div class="card" style="margin-top:12px;padding:18px 20px">
+        <div class="section-header">해석 가이드</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          ${[['VIX < 15','안정. 낙관론 우세.','var(--green)'],['VIX 15–25','일반적 변동성.','#FACC15'],['VIX > 25','공포 확산. 리스크 경계.','var(--red)'],['공포지수 < 30','역발상 매수 구간.','var(--blue)']].map(([t,d,c])=>`
+            <div style="padding:12px 14px;background:var(--surf2);border-radius:8px">
+              <div style="font-size:13px;font-weight:600;color:${c};margin-bottom:4px">${t}</div>
+              <div style="font-size:12px;color:var(--muted)">${d}</div>
             </div>`).join('')}
-          </div>
         </div>
       </div>`;
 
     case 'calendar': return `
-      <div class="section-header">경제지표 · 이벤트 캘린더</div>
+      <div class="section-header">경제지표 · 이벤트 캘린더 (7일)</div>
       <div class="card">
-        ${(d.calendar || []).length ? d.calendar.map(e => `
+        ${(d.calendar||[]).length?(d.calendar||[]).map(e=>`
           <div class="list-item">
-            <div class="list-date ${e.importance === 'high' ? 'imp-high' : e.importance === 'medium' ? 'imp-medium' : ''}">${e.date || ''}</div>
+            <div class="list-date ${e.importance==='high'?'imp-high':e.importance==='medium'?'imp-medium':''}">${e.date||''}</div>
             <div class="list-content">
-              <div class="list-title">${e.event || ''} ${e.importance === 'high' ? '⭐' : ''}</div>
-              <div class="list-desc">${e.description || ''}</div>
+              <div class="list-title">
+                ${countryBadge(e.country)}
+                ${e.event||''}
+                ${e.importance==='high'?'<span style="color:var(--red);font-size:13px">⭐</span>':''}
+              </div>
+              <div class="list-desc">${e.description||''}</div>
             </div>
-          </div>`).join('') : '<div style="padding:20px;text-align:center;color:var(--dim);font-size:13px">이벤트 데이터 없음</div>'}
+          </div>`).join(''):'<div style="padding:24px;text-align:center;color:var(--dim);font-size:14px">캘린더 데이터 없음</div>'}
       </div>
-      <div style="padding:10px 14px;background:var(--surf2);border-radius:8px;font-size:10px;color:var(--dim);line-height:1.6;margin-top:8px">
-        * 경제지표 일정은 AI 지식 기반 제공. 실제 일정과 다를 수 있습니다. investing.com에서 확인 권장.
+      <div style="padding:12px 16px;background:var(--surf2);border-radius:8px;font-size:11px;color:var(--dim);line-height:1.7;margin-top:10px">
+        * 경제지표 일정은 AI 지식 기반. 실제 일정은 <a href="https://investing.com/economic-calendar/" target="_blank">investing.com</a>에서 확인 권장.
       </div>`;
 
     case 'earnings': return `
-      <div class="section-header">기업 실적</div>
+      <div class="section-header">기업 실적 발표 (중요도 순)</div>
       <div class="card">
-        ${(d.earnings || []).length ? d.earnings.map(e => `
+        ${(d.earnings||[]).length?(d.earnings||[]).map(e=>`
           <div class="list-item">
-            <div class="list-date">${e.date || ''}</div>
+            <div style="min-width:52px;flex-shrink:0">
+              <div class="list-date" style="margin-bottom:3px">${e.date||''}</div>
+              <span class="country-badge ${e.market==='KR'?'country-kr':'country-us'}">${e.market||'US'}</span>
+            </div>
             <div class="list-content">
-              <div class="list-title" style="display:flex;align-items:center;gap:8px">
-                ${e.company || ''}
-                <span class="${e.signal === 'beat' ? 'signal-beat' : e.signal === 'miss' ? 'signal-miss' : 'signal-upcoming'}" style="font-size:11px">
-                  ${e.signal === 'beat' ? '▲ 어닝 서프라이즈' : e.signal === 'miss' ? '▼ 어닝 쇼크' : e.signal === 'meet' ? '= 예상 부합' : '예정'}
+              <div class="list-title">
+                <span style="font-weight:600">${e.company||''}</span>
+                <span style="font-size:11px;color:var(--dim)">${e.ticker||''}</span>
+                <span class="${e.signal==='beat'?'signal-beat':e.signal==='miss'?'signal-miss':'signal-upcoming'}">
+                  ${e.signal==='beat'?'▲ 서프라이즈':e.signal==='miss'?'▼ 쇼크':e.signal==='meet'?'= 예상 부합':'예정'}
                 </span>
               </div>
-              <div class="list-desc">${e.expectation || ''}</div>
+              <div class="list-desc">${e.epsEstimate?'예상 EPS: '+e.epsEstimate:''}</div>
             </div>
-          </div>`).join('') : '<div style="padding:20px;text-align:center;color:var(--dim);font-size:13px">실적 데이터 없음</div>'}
+          </div>`).join(''):'<div style="padding:24px;text-align:center;color:var(--dim);font-size:14px">실적 데이터 없음</div>'}
       </div>
-      <div style="padding:10px 14px;background:var(--surf2);border-radius:8px;font-size:10px;color:var(--dim);line-height:1.6;margin-top:8px">
-        * 기업 실적은 AI 지식 기반 제공. earningswhispers.com에서 확인 권장.
+      <div style="padding:12px 16px;background:var(--surf2);border-radius:8px;font-size:11px;color:var(--dim);line-height:1.7;margin-top:10px">
+        * 기업 실적은 AI 지식 기반. 정확한 일정은 <a href="https://earningswhispers.com" target="_blank">earningswhispers.com</a> 확인 권장.
       </div>`;
 
     case 'brokerage': return `
-      <div class="section-header">증권사 리포트 · 목표가</div>
+      <div class="section-header">증권사 리포트 · 목표가 변경 (중요도 순)</div>
       <div class="card">
-        ${(d.brokerageReports || []).length ? d.brokerageReports.map(r => `
+        ${(d.brokerageReports||[]).length?(d.brokerageReports||[]).map(r=>`
           <div class="list-item">
-            <div style="min-width:48px;flex-shrink:0;padding-top:2px">
-              <div style="font-size:11px;font-weight:600;color:var(--amber)">${r.broker || ''}</div>
-              <div class="${r.change === '상향' ? 'change-up' : r.change === '하향' ? 'change-down' : 'change-same'}" style="font-size:10px">${r.change || ''}</div>
+            <div style="min-width:60px;flex-shrink:0;padding-top:2px">
+              <div style="font-size:12px;font-weight:600;color:var(--amber);margin-bottom:3px">${r.broker||''}</div>
+              <span class="${r.change==='상향'?'change-up':r.change==='하향'?'change-down':'change-same'}">${r.change||''}</span>
             </div>
             <div class="list-content">
-              <div class="list-title" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-                ${r.company || ''}
-                <span style="font-size:11px;color:var(--muted)">${r.rating || ''}</span>
-                ${r.targetPrice ? `<span style="font-size:11px;color:var(--amber)">목표가 ${r.targetPrice}</span>` : ''}
-                ${r.prevTarget ? `<span style="font-size:10px;color:var(--dim)">← ${r.prevTarget}</span>` : ''}
+              <div class="list-title">
+                <span style="font-weight:600">${r.company||''}</span>
+                <span style="font-size:11px;color:var(--dim)">${r.ticker||''}</span>
+                <span style="font-size:12px;color:var(--muted)">${r.rating||''}</span>
+                ${r.targetPrice?`<span style="font-size:13px;color:var(--amber);font-weight:600">목표 ${r.targetPrice}</span>`:''}
+                ${r.prevTarget?`<span style="font-size:11px;color:var(--dim)">← ${r.prevTarget}</span>`:''}
               </div>
-              <div class="list-desc">${r.summary || ''}</div>
+              <div class="list-desc">${r.summary||''}</div>
             </div>
-          </div>`).join('') : '<div style="padding:20px;text-align:center;color:var(--dim);font-size:13px">리포트 데이터 없음</div>'}
+          </div>`).join(''):'<div style="padding:24px;text-align:center;color:var(--dim);font-size:14px">리포트 데이터 없음</div>'}
       </div>
-      <div style="padding:10px 14px;background:var(--surf2);border-radius:8px;font-size:10px;color:var(--dim);line-height:1.6;margin-top:8px">
-        * 증권사 리포트는 AI 지식 기반 제공. 실제 리포트는 각 증권사 및 <a href="https://finance.naver.com/research/" target="_blank">네이버 금융 리서치</a>에서 확인 권장.
+      <div style="padding:12px 16px;background:var(--surf2);border-radius:8px;font-size:11px;color:var(--dim);line-height:1.7;margin-top:10px">
+        * 증권사 리포트는 AI 지식 기반. 실제 리포트는 <a href="https://finance.naver.com/research/" target="_blank">네이버 금융 리서치</a> 확인 권장.
       </div>`;
 
     case 'news': {
-      const domestic = (d.news || []).filter(n => n.type === 'domestic');
-      const international = (d.news || []).filter(n => n.type === 'international');
-      const renderNews = (items) => items.map(n => `
+      const domestic = (d.news||[]).filter(n=>n.type==='domestic');
+      const intl     = (d.news||[]).filter(n=>n.type==='international');
+      const crypto   = (d.news||[]).filter(n=>n.type==='crypto');
+      const renderNews = items => items.map(n=>`
         <div class="card news-item">
           <div class="news-meta">
             <div class="news-tags">
-              <span class="news-tag ${n.importance === 'high' ? 'tag-high' : n.importance === 'medium' ? 'tag-medium' : 'tag-low'}">
-                ${n.importance === 'high' ? '주요' : n.importance === 'medium' ? '관심' : '참고'}
+              <span class="news-tag ${n.importance==='high'?'tag-high':n.importance==='medium'?'tag-medium':'tag-low'}">
+                ${n.importance==='high'?'주요':n.importance==='medium'?'관심':'참고'}
               </span>
-              <span class="news-tag tag-low">${n.category || '일반'}</span>
+              <span class="news-tag tag-low">${n.category||'일반'}</span>
             </div>
-            <span class="news-source">${n.source || ''}</span>
+            <span class="news-source">${n.source||''}</span>
           </div>
-          <div class="news-title">${n.title || ''}</div>
-          ${n.summary ? `<div class="news-summary">${n.summary}</div>` : ''}
-          ${n.link ? `<a href="${n.link}" target="_blank" class="news-link">원문 보기 →</a>` : ''}
+          <div class="news-title">${n.title||''}</div>
+          ${n.summary?`<div class="news-summary">${n.summary}</div>`:''}
+          ${n.link?`<a href="${n.link}" target="_blank" class="news-link">원문 보기 →</a>`:''}
         </div>`).join('');
       return `
-        <div class="section-header">국내 뉴스</div>
-        ${domestic.length ? renderNews(domestic) : '<div style="color:var(--dim);font-size:13px;margin-bottom:16px">국내 뉴스 없음</div>'}
-        <div class="section-header" style="margin-top:16px">해외 뉴스</div>
-        ${international.length ? renderNews(international) : '<div style="color:var(--dim);font-size:13px">해외 뉴스 없음</div>'}`;
+        ${domestic.length?`<div class="section-header">국내 뉴스 (${domestic.length}건)</div>${renderNews(domestic)}`:''}
+        ${intl.length?`<div class="section-header" style="margin-top:18px">해외 뉴스 (${intl.length}건)</div>${renderNews(intl)}`:''}
+        ${crypto.length?`<div class="section-header" style="margin-top:18px">크립토 뉴스 (${crypto.length}건)</div>${renderNews(crypto)}`:''}
+        ${!domestic.length&&!intl.length&&!crypto.length?'<div style="color:var(--dim);font-size:14px;padding:20px">뉴스를 불러올 수 없습니다.</div>':''}`;
     }
 
     case 'insight': return `
-      <div class="card" style="padding:20px 22px;margin-bottom:10px">
+      <div class="card" style="padding:24px 26px;margin-bottom:14px">
         <div class="section-header">오늘의 핵심 포인트</div>
-        ${(d.insights?.keyPoints || []).map((p, i) => `
+        ${(d.insights?.keyPoints||[]).map((p,i)=>`
           <div class="insight-point">
-            <div class="insight-num">${i + 1}</div>
+            <div class="insight-num">${i+1}</div>
             <div class="insight-text">${p}</div>
           </div>`).join('')}
       </div>
-      ${d.insights?.watchout ? `
-      <div class="risk-box">
-        <span style="font-size:18px;flex-shrink:0">⚠️</span>
-        <div>
-          <div style="font-size:9px;font-weight:600;color:var(--red);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">오늘의 리스크</div>
-          <div style="font-size:13px;line-height:1.6">${d.insights.watchout}</div>
-        </div>
-      </div>` : ''}
-      ${d.insights?.tomorrowFocus ? `
-      <div class="tomorrow-box">
-        <span style="font-size:16px">📅</span>
-        <div>
-          <div style="font-size:9px;color:var(--amber);font-weight:600;letter-spacing:.08em;margin-bottom:2px">내일 주목</div>
-          <div style="font-size:13px">${d.insights.tomorrowFocus}</div>
-        </div>
-      </div>` : ''}
+      ${d.insights?.watchout?`
+        <div class="risk-box">
+          <div class="risk-box-icon">⚠️</div>
+          <div>
+            <div class="risk-box-label">오늘의 리스크</div>
+            <div class="risk-box-text">${d.insights.watchout}</div>
+          </div>
+        </div>`:''}
+      ${d.insights?.tomorrowFocus?`
+        <div class="tomorrow-box">
+          <div class="tomorrow-icon">📅</div>
+          <div>
+            <div class="tomorrow-label">내일 주목</div>
+            <div class="tomorrow-text">${d.insights.tomorrowFocus}</div>
+          </div>
+        </div>`:''}
       <div class="disclaimer">
-        * 본 리포트는 실시간 API 데이터 + Claude AI 분석 기반입니다. 일부 수치는 AI 추정치이며 투자 결정은 반드시 본인의 판단으로 하시기 바랍니다.
+        * 본 리포트는 실시간 API 데이터 + Claude AI 분석 기반입니다. 일부 수치(경제지표·실적·증권사 리포트)는 AI 추정치이며 투자 결정은 반드시 본인의 판단으로 하시기 바랍니다.
       </div>`;
 
     default: return '';
@@ -726,13 +728,13 @@ function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.style.display = 'block';
-  setTimeout(() => t.style.display = 'none', 2500);
+  setTimeout(()=>t.style.display='none', 2500);
 }
 
 function showShare() {
   if (!reportData) return;
-  const text = `📊 Briefr 데일리 투자 브리핑\n${reportData.date}\n${reportData.headline}\n\nhttps://briefr-api.vercel.app`;
-  navigator.clipboard.writeText(text).then(() => showToast('✓ 공유 텍스트 복사됨')).catch(() => showToast('복사 실패'));
+  const text = `📊 Briefr 데일리 투자 브리핑\n${reportData.date||''}\n${reportData.headline||''}\n\nhttps://briefr-api.vercel.app`;
+  navigator.clipboard.writeText(text).then(()=>showToast('✓ 공유 텍스트 복사됨')).catch(()=>showToast('복사 실패'));
 }
 </script>
 </body>
