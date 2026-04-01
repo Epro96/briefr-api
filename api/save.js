@@ -1,48 +1,69 @@
-// api/save.js
-// 생성된 리포트를 Upstash Redis에 저장하고 6자리 코드 반환
-// 24시간 유효
+// api/save.js — Vercel Serverless Function
+// 환경변수 필요: UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN
 
 export default async function handler(req, res) {
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
+  // ── CORS 헤더 (모든 출처 허용) ──────────────────────────────
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
 
-  const REDIS_URL   = process.env.UPSTASH_REDIS_REST_URL;
-  const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
-
-  if (!REDIS_URL || !REDIS_TOKEN) {
-    return res.status(500).json({ error: 'Upstash 환경변수가 설정되지 않았습니다.' });
+  // CORS preflight 요청 처리
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
   }
 
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method Not Allowed" });
+  }
+
+  // ── 환경변수 확인 ──────────────────────────────────────────
+  const { UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN } = process.env;
+  if (!UPSTASH_REDIS_REST_URL || !UPSTASH_REDIS_REST_TOKEN) {
+    console.error("[save] Missing Upstash env vars");
+    return res.status(500).json({ error: "서버 환경변수 미설정 (UPSTASH)" });
+  }
+
+  // ── 요청 바디 파싱 ─────────────────────────────────────────
+  let data;
   try {
-    const report = await req.json ? req.json() : JSON.parse(await new Promise(resolve => {
-      let body = '';
-      req.on('data', chunk => body += chunk);
-      req.on('end', () => resolve(body));
-    }));
+    data = req.body;
+    if (typeof data === "string") data = JSON.parse(data);
+  } catch (e) {
+    return res.status(400).json({ error: "Invalid JSON body" });
+  }
 
-    // 6자리 대문자 코드 생성
-    const code = Math.random().toString(36).slice(2, 8).toUpperCase();
+  if (!data || typeof data !== "object") {
+    return res.status(400).json({ error: "Empty or invalid data" });
+  }
 
-    // Upstash Redis REST API로 저장 (TTL 24시간 = 86400초)
-    const saveRes = await fetch(`${REDIS_URL}/set/report:${code}`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${REDIS_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        value: JSON.stringify({ ...report, savedAt: new Date().toISOString() }),
-        ex: 86400, // 24시간
-      }),
-    });
+  // ── 6자리 코드 생성 ────────────────────────────────────────
+  const code = Math.floor(100000 + Math.random() * 900000).toString();
+  const key = `briefr:${code}`;
+  const payload = JSON.stringify({ data, savedAt: new Date().toISOString() });
 
-    if (!saveRes.ok) {
-      const err = await saveRes.text();
-      throw new Error('Redis 저장 실패: ' + err);
+  // ── Upstash Redis에 저장 (TTL: 24시간 = 86400초) ──────────
+  try {
+    const upstashRes = await fetch(
+      `${UPSTASH_REDIS_REST_URL}/set/${key}`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${UPSTASH_REDIS_REST_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify([payload, "EX", 86400]),
+      }
+    );
+
+    if (!upstashRes.ok) {
+      const errText = await upstashRes.text();
+      console.error("[save] Upstash error:", upstashRes.status, errText);
+      return res.status(500).json({ error: `Redis 저장 실패 (${upstashRes.status})` });
     }
 
-    return res.status(200).json({ code });
-  } catch(e) {
-    return res.status(500).json({ error: e.message });
+    return res.status(200).json({ code, expiresIn: "24h" });
+  } catch (e) {
+    console.error("[save] Fetch to Upstash failed:", e.message);
+    return res.status(500).json({ error: `Redis 연결 실패: ${e.message}` });
   }
 }
