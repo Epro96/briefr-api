@@ -1,37 +1,47 @@
-// api/load.js
-// 6자리 코드로 저장된 리포트를 Upstash Redis에서 불러오기
+// api/load.js — Vercel Serverless Function
+// GET /api/load?code=123456
 
 export default async function handler(req, res) {
-  if (req.method === 'OPTIONS') return res.status(200).end();
+  // ── CORS 헤더 ────────────────────────────────────────────
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  const REDIS_URL   = process.env.UPSTASH_REDIS_REST_URL;
-  const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (req.method === "OPTIONS") return res.status(200).end();
+  if (req.method !== "GET") return res.status(405).json({ error: "Method Not Allowed" });
 
-  if (!REDIS_URL || !REDIS_TOKEN) {
-    return res.status(500).json({ error: 'Upstash 환경변수가 설정되지 않았습니다.' });
+  const { UPSTASH_REDIS_REST_URL, UPSTASH_REDIS_REST_TOKEN } = process.env;
+  if (!UPSTASH_REDIS_REST_URL || !UPSTASH_REDIS_REST_TOKEN) {
+    return res.status(500).json({ error: "서버 환경변수 미설정" });
   }
 
-  const code = (req.query?.code || '').toUpperCase().trim();
-  if (!code || code.length !== 6) {
-    return res.status(400).json({ error: '올바른 6자리 코드를 입력해주세요.' });
+  const { code } = req.query;
+  if (!code || !/^\d{6}$/.test(code)) {
+    return res.status(400).json({ error: "올바른 6자리 코드를 입력하세요" });
   }
+
+  const key = `briefr:${code}`;
 
   try {
-    const getRes = await fetch(`${REDIS_URL}/get/report:${code}`, {
-      headers: { Authorization: `Bearer ${REDIS_TOKEN}` },
-    });
+    const upstashRes = await fetch(
+      `${UPSTASH_REDIS_REST_URL}/get/${key}`,
+      {
+        headers: { Authorization: `Bearer ${UPSTASH_REDIS_REST_TOKEN}` },
+      }
+    );
 
-    if (!getRes.ok) throw new Error('Redis 조회 실패');
-
-    const result = await getRes.json();
-
-    if (!result.result) {
-      return res.status(404).json({ error: '리포트를 찾을 수 없습니다. 코드를 확인하거나 24시간이 지났을 수 있습니다.' });
+    if (!upstashRes.ok) {
+      return res.status(500).json({ error: `Redis 조회 실패 (${upstashRes.status})` });
     }
 
-    const report = JSON.parse(result.result);
-    return res.status(200).json(report);
-  } catch(e) {
-    return res.status(500).json({ error: e.message });
+    const { result } = await upstashRes.json();
+    if (!result) {
+      return res.status(404).json({ error: "코드가 존재하지 않거나 만료됐어요 (24시간)" });
+    }
+
+    const { data } = JSON.parse(result);
+    return res.status(200).json({ data });
+  } catch (e) {
+    return res.status(500).json({ error: `Redis 연결 실패: ${e.message}` });
   }
 }
